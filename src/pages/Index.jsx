@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Button } from "@/components/ui/button"
-import { Dialog, DialogContent, DialogTrigger, DialogClose } from "@/components/ui/dialog"
-import { X } from "lucide-react"
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
 
 const Index = () => {
   const [videoOpen, setVideoOpen] = useState(false);
@@ -17,20 +16,16 @@ const Index = () => {
             <DialogTrigger asChild>
               <Button variant="outline">Watch Demo</Button>
             </DialogTrigger>
-            <DialogContent className="max-w-full p-0 h-screen flex items-center justify-center bg-black bg-opacity-90">
-              <DialogClose className="absolute top-4 right-4 text-white">
-                <X className="h-6 w-6" />
-              </DialogClose>
-              <div className="w-full max-w-7xl aspect-video">
-                <iframe
-                  className="w-full h-full"
-                  src="https://www.youtube.com/embed/4g-1cPGK0GA"
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
+            <DialogContent className="sm:max-w-[425px]">
+              <iframe
+                width="100%"
+                height="315"
+                src="https://www.youtube.com/embed/4g-1cPGK0GA"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
             </DialogContent>
           </Dialog>
           <Button variant="outline" onClick={() => alert("Examples page not implemented yet")}>View Examples</Button>
